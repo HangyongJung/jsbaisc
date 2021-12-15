@@ -6,16 +6,48 @@
 var는 한번 선언된 변수를 다시 선언할 수 있다.
 var는 선언하기 전에 사용할 수 있다.
 
+``` js
 console.log(name); //undefined
 var name = "Mike";
+```
 는 아래와 같이 작동한다.
-
+```js
 var name; //선언
 console.log(name); //undefined
 name = "Mike"; //할당
+```
 이것을 '호이스팅'이라고 하는데, 선언은 호이스팅되지만 할당은 호이스팅되지 않는다.
 
-*호이스팅 : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것 처럼 행동
+※호이스팅 : 스코프 내부 어디서든 변수 선언은 최상위에 선언된 것 처럼 행동
+Temporal Dead Zone
+
+<변수의 생성과정>
+1. 선언 단계
+2. 초기화 단계
+3. 할당 단계
+
+var는 선언과 초기화가 동시에 됨
+let은 선언과 초기화가 나뉘어서 됨
+const는 선언과 초기화와 할당이 동시에 돼야 함
+
+var : 함수 스코프(function-scoped)
+let, const : 블록 스코프(block-scoped)
+
+```js
+function add(){
+    // Block-level Scope
+}
+
+if() {
+    // Block-level Scope
+}
+
+for(let i=0;i<10;i++){
+    // Block-level Scope
+}
+```
 
 
-- 호이스팅은 
+
+
+
