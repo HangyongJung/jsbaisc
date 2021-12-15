@@ -47,7 +47,56 @@ for(let i=0;i<10;i++){
 }
 ```
 
+## 02. 생성자 함수
+
+```js
+function User(name, age) { // 함수명 첫 글자는 대문자로
+  //this = {}
+  this.name = name;
+  this.age = age;
+  this.sayName = function () {
+    console.log(this.name);
+  };
+  // return this;
+}
+
+let user1 = new User("Mike", 20); // new 연산자를 사용해서 호출
+let user2 = new User("Emily", 10);
+let user3 = new User("Jane", 30);
+
+user1.sayName(); // "Mike"
+```
 
 
+## 03. 객체 메소스(Object methods), 계산된 프로퍼티(Computed property)
 
+Computed property
 
+```js
+let a = 'age';
+
+const user = {
+    name : "Mike",
+    [a] : 30 // Computed property : age = 30
+}
+
+const user1 = {
+    name : "Jane",
+    age : 20 // Computed property : age = 30
+}
+
+const user2 = {
+    name : "Tom",
+    age : 10 // Computed property : age = 30
+}
+```
+
+Object.assign():객체 복제
+```js
+const newUser = Object.assign({}, user) // 빈 객체에 user가 병합된다.
+const newUser = Object.assign({}, user1, user2) // 빈 객체에 user1, user2가 병합된다.
+```
+Object.keys(user1):키 배열 반환 => ["name","age"]
+Object.values(user1):값 배열 반환 => ["Jane",20]
+Object.entries(user1):키/값 배열 반환 => [["name","Mike"],["age",30]]
+Object.fromEntries():키/값 배열을 객체로
