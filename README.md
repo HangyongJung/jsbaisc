@@ -91,12 +91,12 @@ const user2 = {
 }
 ```
 
-Object.assign():객체 복제
+* Object.assign():객체 복제
 ```js
 const newUser = Object.assign({}, user) // 빈 객체에 user가 병합된다.
 const newUser = Object.assign({}, user1, user2) // 빈 객체에 user1, user2가 병합된다.
 ```
-Object.keys(user1):키 배열 반환 => ["name","age"]
-Object.values(user1):값 배열 반환 => ["Jane",20]
-Object.entries(user1):키/값 배열 반환 => [["name","Mike"],["age",30]]
-Object.fromEntries():키/값 배열을 객체로
+* Object.keys(user1):키 배열 반환 => ["name","age"]
+* Object.values(user1):값 배열 반환 => ["Jane",20]
+* Object.entries(user1):키/값 배열 반환 => [["name","Mike"],["age",30]]
+* Object.fromEntries():키/값 배열을 객체로
