@@ -115,6 +115,27 @@ const user = {
     age : 30,
     [id] : 'myid'
 }
+
+//다른 개발자가 만들어 놓은 객체
+const user = {
+  name: "Mike",
+  age: 30
+};
+
+// 내가 작업
+// user.showName = function() {};
+const showName = Symbol("show name");
+user[showName] = function () {
+  console.log(this.name);
+};
+
+user[showName]();
+
+// 사용자가 접속하면 보는 메세지
+for (let key in user) {
+  console.log(`His ${key} is ${user[key]}.`);
+}
+
 ```
 
 * Symbol.for() : 전역 심볼
@@ -122,3 +143,30 @@ const user = {
     * 없으면 만들고, 있으면 가져오기 떄문
     * Symbol 함수는 매번 다른 Symbol 값을 생성하지만,
     * Symbol.for 메소드는 하나를 생성한 뒤 키를 통해 같은 Symbol을 공유
+
+
+## 05. 숫자, 수학 method(Number, Math)
+
+* toString() : 10진수 -> 2진수/16진수
+```js
+let num =10;
+
+num.toString(); //"10"
+num.toString(2); // "1010"
+
+let num = 255;
+
+num2.toString(16); // "ff"
+
+* Math
+    * Math.PI() : 파이
+    * Math.ceil() : 올림
+    * Math.floor() : 내림
+    * Math.round() : 반올림
+    * Math.random() : 난수 생성
+    * Math.abs() : 절대값
+    * Math.pow(n,m) : n의 m승 값
+    * Math.sqrt() : 제곱근
+* isNaN() : NaN인지 확인
+* parseInt() : 읽을 수 있는 숫자 반환
+
