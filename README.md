@@ -100,3 +100,25 @@ const newUser = Object.assign({}, user1, user2) // 빈 객체에 user1, user2가
 * Object.values(user1):값 배열 반환 => ["Jane",20]
 * Object.entries(user1):키/값 배열 반환 => [["name","Mike"],["age",30]]
 * Object.fromEntries():키/값 배열을 객체로
+
+## 04. 심볼(Symbol)
+코드에서 유일한 프로퍼티를 사용하고 싶을
+```js
+const a = Symbol('설명'); // 유일한 식별자, new를 붙이지 않습니다!
+```
+
+* property key : 심볼형
+```js
+const id = Symbol('id');
+const user = {
+    name : "Mike",
+    age : 30,
+    [id] : 'myid'
+}
+```
+
+* Symbol.for() : 전역 심볼
+    * 하나의 심볼만 보장받을 수 있음
+    * 없으면 만들고, 있으면 가져오기 떄문
+    * Symbol 함수는 매번 다른 Symbol 값을 생성하지만,
+    * Symbol.for 메소드는 하나를 생성한 뒤 키를 통해 같은 Symbol을 공유
