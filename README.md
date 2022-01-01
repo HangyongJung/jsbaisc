@@ -157,6 +157,7 @@ num.toString(2); // "1010"
 let num = 255;
 
 num2.toString(16); // "ff"
+```
 
 * Math
     * Math.PI() : 파이
@@ -170,3 +171,89 @@ num2.toString(16); // "ff"
 * isNaN() : NaN인지 확인
 * parseInt() : 읽을 수 있는 숫자 반환
 
+## 06. 문자열 메소드(String methods)
+
+```js
+let desc = "안녕하세요";
+desc.length // length 문자열 길이 : 6
+desc[2] // 특정위치에 접근 : 하
+
+let desc ="Hi Guys."
+
+desc.toUpperCase(); //  HI GUYS. 모두 대문자로 바꿔준다
+desc.toLowerCase(); //  hi guys. 모두 소문자로 바꿔준다
+
+desc.indexOf('guys'); // 3
+desc.indexOf('man');  // -1 없는 문자열
+
+let desc = "abcdefg"
+
+str.slice(n,m); // n은 시작점 m은 없으면 문자열 전체, 양수면 그 숫자까지(포함하지 않음), 음수면 끝에서부터 셈
+desc.slice(2); // "cdefg"
+desc.slice(0,5);  // "abcde"
+desc.slice(2,-2); // "cde"
+
+str.substring(n,m); // n,m 사이의 문자열 반환,  음수는 0으로 인식
+desc.substring(2,5); // "cde"
+desc.substring(5,2); // "cde"
+
+str.substr(n,m); // n부터 시작해서 m개를 가져옴
+desc.substr(2,4); // "cdef"
+desc.substr(-4,2); // "de"
+
+str.trim(); // 문자열 앞뒤 공백 제거
+let desc = " coding    ";
+desc.trim(); // "coding"
+
+str.repeat(n); // n번 반복
+let hello = "hello!";
+hello.repeat(3); //hello!hello!hello!
+
+hello.includes("hello") // true
+```
+
+## 07. 배열 메소드 1
+* push() : 뒤에 삽입
+* pop() : 뒤에 삭제
+* unshift() : 앞에 삽입
+* shift() : 앞에 삭제
+
+```js
+arr.splice(n,m) // 특정 요소 지움, 삭제된 요소를 반환 함
+
+let arr = [1,2,3,4,5];
+arr.splice(1,2);  // [1,4,5]
+
+arr.splice(n,m,x) // 특정 요소 지우고 추가
+let arr = [1,2,3,4,5];
+arr.splice(1,2,100,200);  // [1,100,200,4,5]
+
+arr.slice(n,m) // n부터 m까지 반환
+arr.slice(1,4); // [2,3,4]
+
+arr.concat(arr2,arr3 ..) // 합쳐서 새 배열 반환
+
+let arr =[1,2];
+arr.concat([3,4]); // [1,2,3,4]
+arr.concat([3,4],[5,6]); // [1,2,3,4,5,6]
+arr.concat([3,4],5,6); // [1,2,3,4,5,6]
+
+arr.forEach(fn) // 배열 반복
+
+let users = ['Mike','Tom','Jane'];
+users.forEach((item,index,arr))=>{
+}
+
+arr.indexOf(n) / arr.lastIndexOf(n)
+arr.includes(n)
+arr.find(fn) / arr.findIndex(fn)
+
+arr.filter(fn) // 만족하는 모든 요소를 배열로 반환
+arr.reverse() //역순으로 재정렬
+arr.map(fn) // 함수를 받아 특정기능을 실행해서 반환
+
+arr.join() // 배열을 문자열로 만들어 준다
+arr.split() // 문자열을 배열로 나누어 준다
+
+arr.isArray() // 배열인지 아닌지 확인
+```
